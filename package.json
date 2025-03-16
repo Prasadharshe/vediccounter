@@ -2,8 +2,7 @@
   "name": "number-counter",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Prasadharshe.github.io/ChantCounter",
-
+  "homepage": "https://prasadharshe.github.io/ChantCounter",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -30,6 +29,6 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "gh-pages": "^6.3.0",
     "globals": "^15.15.0",
-    "vite": "^6.2.0"
+    "vite": "^6.2.2"
   }
 }
