@@ -75,7 +75,7 @@ html, body {
 }
 
 .title {
-  font-size: 4rem; 
+  /* font-size: 4rem !important;  */
   color: white;
   text-align: center;
   margin: 0;
@@ -306,10 +306,15 @@ button:hover {
   /* .counter {
     font-size: 1rem; 
   } */
-
 .title{
-    font-size: 2rem;
+    font-size: 2rem ;
  } 
+
+ .reset-icon{
+  top: 70px;
+  left: 30px;
+  font-size: 1.1rem; 
+ }
 
 .welcome-screen{
     font-size: 0.9rem;
@@ -402,7 +407,8 @@ button {
   .welcome-screen{
     /* height: 1025px;  
     width: 1624px;  */
-    padding-left: 800px                   
+    padding-left: 1100px;
+    
   }
 }
 
