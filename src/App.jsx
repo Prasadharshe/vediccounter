@@ -28,7 +28,7 @@ function App() {
   }, [count, startingNumber, completedCycles, lastCycleCount]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowWelcome(false), 3000);
+    const timer = setTimeout(() => setShowWelcome(false), 6000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -48,7 +48,7 @@ function App() {
       setCompletedCycles((prev) => prev + 1);
       setLastCycleCount(newCount);
       setShowCycleMessage(true);
-      setTimeout(() => setShowCycleMessage(false), 3000);
+      setTimeout(() => setShowCycleMessage(false), 4000);
     }
   };
 
@@ -65,12 +65,13 @@ function App() {
     );
   };
 
-  if (showWelcome) return <div className="welcome-screen"><h2>A simple tool for counting things and keeping track of numbers.</h2></div>;
+  if (showWelcome) return <div className="welcome-screen samarkan-text"><h1>Vedic Counter<p className="welcome-screen-p">A Vedic counter where you can keep tracks of your chant cycle.</p></h1>
+  </div>;
 
   return (
     <div className="container">
       <div className="title-container">
-        <h2 className="title">Counter</h2>
+        <h2 className="title samarkan-text">Vedic Counter</h2>
         <input type="number" className="start-input" placeholder="Enter any number to start with" onChange={handleStartingNumberChange} />
       </div>
 
@@ -78,8 +79,8 @@ function App() {
         {Array.from({ length: completedCycles }).map((_, i) => <span key={i} className="dot"></span>)}
       </div>
 
-      {showCycleMessage && <div className="cycle-message">🎉 1 Cycle Completed! 🎉</div>}
-      <h1 className="counter">{count}</h1>
+      {showCycleMessage && <div className="cycle-message samarkan-text">🎉 1 Cycle Completed! 🎉</div>}
+      <h1 className="counter samarkan-text">{count}</h1>
 
       <div className="button-container">
         {count > 0 && <button className="minus" onClick={decreaseCounter}><FontAwesomeIcon icon={faMinus} /></button>}
@@ -90,16 +91,16 @@ function App() {
       {showModal && (
         <div className="modal-overlay">
           <div className="modal">
-            <p>Are you sure you want to reset the counter?</p>
+            <p className="modal-p">Are you sure you want to reset the counter?</p>
             <div className="modal-buttons">
-              <button className="modal-btn cancel" onClick={() => setShowModal(false)}>Cancel</button>
-              <button className="modal-btn confirm" onClick={resetCounter}>OK</button>
+              <button className="modal-btn modal-p cancel" onClick={resetCounter}>Ok</button>
+              <button className="modal-btn modal-p confirm" onClick={() => setShowModal(false)}>Cancel</button>
             </div>
           </div>
         </div>
       )}
       <footer className="footer">
-        <p>© 2025 | Made with ❤️ by <span className="name">Prasad Harshe</span></p>
+        <p>© 2025 | Made with ❤️ by <span className="name samarkan-text">Prasad Harshe</span></p>
       </footer>
 
     </div>
