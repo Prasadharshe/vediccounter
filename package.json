@@ -2,7 +2,7 @@
   "name": "number-counter",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Prasadharshe.github.io/ChantCounter",
+  "homepage": "https://Prasadharshe.github.io/vediccounter",
   "type": "module",
   "scripts": {
     "dev": "vite",
