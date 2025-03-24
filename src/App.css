@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 html, body {
   margin: 0;
   padding: 0;
@@ -38,18 +40,20 @@ html, body {
 }
 
 .welcome-screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  color: white;
-  font-size: rem;
-  text-align: center;
-  /* padding-left: 800px; */
-  /* top: 0;
-  left: 0; */
-  opacity: 1;
-  animation: fadeInOut 5s ease-in-out forwards;
+    position: fixed; /* Ensure it covers the entire screen */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text */
+    background-color: black; /* Keep background */
+    color: white; /* Text color */
+    font-size: 1.5rem; /* Adjust font size */
+    padding: 20px;
+    animation: fadeInOut 5s ease-in-out forwards;
 }
 
 .welcome-screen-p{
@@ -75,7 +79,7 @@ html, body {
 }
 
 .title {
-  /* font-size: 4rem !important;  */
+  font-size: 4rem ; 
   color: white;
   text-align: center;
   margin: 0;
@@ -171,25 +175,21 @@ button:hover {
 
 .modal {
   background-color: #333333c0;
-  /* font-size: 4rem; */
+  padding: 5px 15px;
+  font-size: 1rem;
   color: #fff;
   border-radius: 10px;
-  /* padding: 200px 300px; */
   text-align: center;
   box-shadow: 0 5px 10px rgba(255, 64, 0, 0.968);
 }
 
-.modal-p{
-  font-size: 1.2rem;
-}
-
 .modal-buttons {
+  /* position: fixed; */
   font-size: 0.7rem;
-  display: flex;               /* Align buttons in a row */
-  justify-content: center;     /* Center the buttons */
-  gap: 0px;                   /* Add space between buttons */
-  margin-top: 0;            /* Add space from text above */
-  flex-wrap: wrap;             /* Ensures buttons wrap if screen size is small */
+  justify-content: center;
+  gap: 0px;
+  margin-top: 0;
+  flex-wrap: wrap;              
 }
 
 .modal-btn {
@@ -197,10 +197,10 @@ button:hover {
   color: #fff;
   font-size: 1.2rem;
   border-radius: 10px;
-  padding: 10px 5px;
+  padding: 5px 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  min-width: 120px; 
+  /* min-width: 120px;  */
 }
 
 .modal-btn.confirm {
@@ -300,13 +300,72 @@ button:hover {
   100% { opacity: 0; }
 }
 
-
 /* Fully responsive: Adjusts button positions & size on smaller screens */
-@media (min-width: 412px) {
-  /* .counter {
-    font-size: 1rem; 
-  } */
-.title{
+
+@media (max-width: 768px) { /* Tablets & smaller screens */
+    .welcome-screen 
+    {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+}
+
+@media (max-width: 480px) { /* Mobile devices */
+    
+    .title
+    {
+      font-size: 2rem;
+    }
+
+    .welcome-screen
+    {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+    .welcome-screen-p
+    {
+      font-size: 0.5rem;
+    }
+
+    .modal-btn.cancel{
+      margin-bottom: 20px;
+      font-size: 1rem;
+      left: 300px;
+    }
+
+    .modal-btn.confirm{
+      margin-bottom: 20px;
+      font-size: 1rem;
+      left: 80px
+    }
+
+  }
+
+  @media (max-width: 320px) {
+
+    .modal{
+      font-size: 0.8rem;
+    }
+    
+    .modal-btn.cancel{
+      margin-bottom: 50px;
+      font-size: 0.8rem;
+      padding: 0px 35px;
+      left: 200px;
+    }
+
+    .modal-btn.confirm{
+      margin-bottom: 50px;
+      font-size: 0.8rem;
+      left: 50px;
+      padding: 0px 35px;
+    }
+  }
+  
+
+
+/* .title{
     font-size: 2rem ;
  } 
 
@@ -317,8 +376,13 @@ button:hover {
  }
 
 .welcome-screen{
-    font-size: 0.9rem;
-    padding-left: 55px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  height: 1025px;           
+  width: 768px;             
+  text-align: center;
 }
 
 .welcome-screen-p{
@@ -333,9 +397,6 @@ button {
     height: 50px;
     bottom: 50px;
 }
-/* .modal {
-    font-size: 0.7rem;
-} */
 .modal-p{
   padding: 5px 20px;
   font-size: 0.7rem;
@@ -370,18 +431,18 @@ button {
 
 .footer{
     font-size: 0.5rem;
-}
+} */
 
 /* Tablets */
-@media (min-width: 768px) {
+/* @media only screen and (min-width: 769px) and (max-width: 1024px) {
   
-  .welcome-screen{
+   .welcome-screen{
     font-size: 1rem;
     display: flex;
-    justify-content: center;  /* Centers horizontally */
-    align-items: center;      /* Centers vertically */
-    height: 1025px;           /* Full height */
-    width: 669px;             /* Full width */
+    justify-content: center;  
+    align-items: center;      
+    height: 1025px;           
+    width: 769px;             
     text-align: center;         
   }
 
@@ -391,26 +452,20 @@ button {
 
   .modal-p{
       font-size: 0.9rem;
-  }
-}
+  } 
+} */
 
-@media (min-width: 1024px){
+/*@media only screen and (min-width: 1025px){
   
-  .welcome-screen{
-    height: 1025px;  
-    width: 1024px;                    
-  }
-}
-
-@media (min-width: 1440){
-  
-  .welcome-screen{
-    /* height: 1025px;  
-    width: 1624px;  */
-    padding-left: 1100px;
-    
-  }
-}
+  /* .welcome-screen{
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    height: 1025px;           
+    width: 1025px;             
+    text-align: center;                  
+  } */
 
 
 /* @media (min-width: 1440px){
@@ -428,8 +483,5 @@ button {
   }
 } */
 
-/* padding-left: 570px; */
 
-  @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-}
