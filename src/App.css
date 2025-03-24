@@ -311,7 +311,7 @@ button:hover {
 
 }
 
-@media (max-width: 480px) { /* Mobile devices */
+@media (min-width: 400px) { /* Mobile devices */
     
     .title
     {
@@ -331,13 +331,13 @@ button:hover {
     .modal-btn.cancel{
       margin-bottom: 20px;
       font-size: 1rem;
-      left: 300px;
+      left: 250px;
     }
 
     .modal-btn.confirm{
       margin-bottom: 20px;
       font-size: 1rem;
-      left: 80px
+      left: 50px
     }
 
   }
