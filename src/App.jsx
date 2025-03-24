@@ -28,7 +28,7 @@ function App() {
   }, [count, startingNumber, completedCycles, lastCycleCount]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowWelcome(false), 6000);
+    const timer = setTimeout(() => setShowWelcome(false), 5500);
     return () => clearTimeout(timer);
   }, []);
 
