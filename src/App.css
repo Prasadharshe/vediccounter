@@ -146,14 +146,14 @@ button {
 /* Position "-" button on the left */
 .minus {
   left: 50px;
-  bottom: 70px;
+  bottom: 120px;
   font-size: 1.4rem;
 }
 
 /* Position "+" button on the right */
 .plus {
   right: 50px;
-  bottom: 70px;
+  bottom: 120px;
   font-size: 1.4rem;
 }
 
@@ -315,6 +315,8 @@ button:hover {
 
 @media (min-width: 400px) { /* Mobile devices */
     
+
+
     .title
     {
       font-size: 2rem;
