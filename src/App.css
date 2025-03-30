@@ -163,19 +163,18 @@ button:hover {
 }
 
 /* Model style */
-.modal-overlay {
+/* .modal-overlay {
   position: fixed;
   top: 50%;
   left: 38%;
-  
-  background-color: rgba(0, 0, 0, 0.767); /* Dark overlay */
+      background-color: rgba(0, 0, 0, 0.767); 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .modal {
-  background-color: #333333c0;
+  background-color: #333333b9;
   padding: 5px 15px;
   font-size: 1rem;
   color: #fff;
@@ -185,7 +184,6 @@ button:hover {
 }
 
 .modal-buttons {
-  /* position: fixed; */
   font-size: 0.7rem;
   justify-content: center;
   gap: 0px;
@@ -201,12 +199,12 @@ button:hover {
   padding: 5px 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  /* min-width: 120px;  */
+
 }
 
 .modal-btn.confirm {
   top: 200%;
-  /* left: 200px; */
+  
   box-shadow: 0 5px 10px #ff1212;
 }
 
@@ -214,22 +212,20 @@ button:hover {
   top: 200%;
   right: 0px;
   box-shadow: 0 5px 10px #2df705;
-  /* box-shadow: 0 5px 10px #ff1212; */
+
 }
 
 .modal-btn:hover.confirm {
-  /* background-color: #042e00; */
   background-color: #2e0000; 
   transition: transform 0.2s ease-in-out;
-  transform: translateY(-5px); /* Moves the button up by 5px */
+  transform: translateY(-5px); 
 }
 
 .modal-btn:hover.cancel {
   background-color: #042e00;
-  /* background-color: #2e0000; */
   transition: transform 0.2s ease-in-out;
   transform: translateY(-5px);
-}
+} */
 
 /* Cycle Completion Message */
 .cycle-message {
@@ -314,9 +310,7 @@ button:hover {
 
 }
 
-@media (max-width: 400px) { /* Mobile devices */
-    
-
+@media (min-width: 400px) { /* Mobile devices */
 
     .title
     {
@@ -339,7 +333,9 @@ button:hover {
     }
 
     .modal-overlay{
+
       top: 50%;
+      /* background-color: rgba(0, 0, 0, 0.767); */
       left: 10%;
     }
 

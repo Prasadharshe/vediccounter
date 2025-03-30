@@ -12,7 +12,7 @@ function App() {
     getStoredValue("startingNumber", 0)
   );
   const [showWelcome, setShowWelcome] = useState(true);
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
   const [completedCycles, setCompletedCycles] = useState(() =>
     getStoredValue("completedCycles", 0)
   );
@@ -55,14 +55,14 @@ function App() {
   const decreaseCounter = () => count > 0 && setCount(count - 1);
 
   const resetCounter = () => {
-    setShowModal(false);
-    setCount(0);
-    setStartingNumber(0);
-    setCompletedCycles(0);
-    setLastCycleCount(0);
-    ["counterValue", "startingNumber", "completedCycles", "lastCycleCount"].forEach((key) =>
-      localStorage.removeItem(key)
-    );
+    const confirmReset = window.confirm("Are you sure you want to reset the counter?");
+    if (confirmReset) {
+      setCount(0); // Reset counter to 0
+      setCycleCount(0); // Reset cycle count if applicable
+      setCompletedCycles([]); // Clear stored cycles (if using dots)
+      localStorage.removeItem("cycleCount"); // Remove stored data
+      localStorage.removeItem("completedCycles");
+    }
   };
 
   if (showWelcome) return <div className="welcome-screen samarkan-text"><h1>Vedic Counter<p className="welcome-screen-p">A Vedic counter where you can keep tracks of your chant cycle.</p></h1>
@@ -84,11 +84,12 @@ function App() {
 
       <div className="button-container">
         {count > 0 && <button className="minus" onClick={decreaseCounter}><FontAwesomeIcon icon={faMinus} /></button>}
-        <FontAwesomeIcon icon={faRedo} className="reset-icon" onClick={() => setShowModal(true)} />
+        <FontAwesomeIcon icon={faRedo} className="reset-icon" onClick={resetCounter} />
         <button className="plus" onClick={increaseCounter}><FontAwesomeIcon icon={faPlus} /></button>
       </div>
-
-      {showModal && (
+         
+         
+      {/* {showModal && (
         <div className="modal-overlay">
           <div className="modal">
             <p className="modal-p">Are you sure you want to reset the counter?</p>
@@ -98,7 +99,7 @@ function App() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
       <footer className="footer">
         <p>© 2025 | Made with ❤️ by <span className="name samarkan-text">Prasad Harshe</span></p>
       </footer>
