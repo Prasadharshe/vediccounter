@@ -98,7 +98,7 @@ html, body {
   font-size: 6rem;
   text-align: center;
   margin-top: 0px;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
   /* text-shadow: 0 0px 30px #2df705; */
 }
 
@@ -129,7 +129,7 @@ button {
 /* reset button style */
 .reset-icon {
  position: absolute;
-  top: 65px;
+  top: 91px;
   right: 30px;
   color: white;
   /* bottom: 500px; */
@@ -138,10 +138,68 @@ button {
   transition: transform 0.3s ease;
 }
 
+.info-icon2{
+  position: absolute;
+  font-size: 1.3rem; 
+  top: 91px;
+  left: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  }
+
 .reset-icon:hover {
   transform: rotate(360deg); /* Cool rotation effect */
-  color: #ff4500; /* Highlight color on hover */
+  color: #ff4800; /* Highlight color on hover */
 }
+
+.info-icon2:hover{
+  color: #ff4800;
+}
+
+/* info icon modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.751);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modal {
+  background: rgba(107, 107, 107, 0.532);
+  padding: 20px;
+  color: #f7f6f6;
+  border-radius: 22px;
+  text-align: center;
+  width: 500px;
+  position: relative ;
+}
+
+.about-text{
+  text-align: left;
+}
+
+.close-btn {
+  /* margin-bottom: 260px;
+  margin-left: 272px; */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 15px 15px; 
+  height: 0;
+  background: rgba(58, 58, 58, 0.532);
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  border-radius: 11px;
+  /* z-index: 1; */
+}
+
 
 /* Position "-" button on the left */
 .minus {
@@ -159,7 +217,7 @@ button {
 
 /* Hover effect */
 button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #ff7a46a8;
 }
 
 /* Model style */
@@ -229,10 +287,10 @@ button:hover {
 
 /* Cycle Completion Message */
 .cycle-message {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: #ff4800;
   position: absolute;
-  top: 100px;
+  top: 140px;
   text-align: center;
   width: 100%;
   animation: fadeInOut 5s ease-in-out;
@@ -242,15 +300,23 @@ button:hover {
 .cycle-dots {
   display: flex;
   justify-content: center;
+  align-items: center;  /* Centers the dots vertically (if needed) */
+  gap: 10px;
   margin-top: 100px;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  background-color: white;
+  width: 16px;
+  height: 16px;
+  background-color: #ff4800;
   border-radius: 50%;
-  margin: 0 5px;
+  /* margin: 0 5px; */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
 }
 
 .footer {
@@ -302,26 +368,33 @@ button:hover {
 /* Fully responsive: Adjusts button positions & size on smaller screens */
 
 @media (max-width: 768px) { /* Tablets & smaller screens */
-    .welcome-screen 
+    
+  .title{
+    font-size: 3rem;
+  }
+  .welcome-screen 
     {
         font-size: 1.2rem;
         padding: 15px;
     }
+    .modal {
+      font-size: 0.8rem;
+      width: 300px;
+    }
 
 }
 
-@media (min-width: 400px) { /* Mobile devices */
+@media (max-width: 480px) { /* Mobile devices */
 
     .title
     {
       font-size: 2.5rem;
     }
 
-    .reset-icon{
+    .reset-icon,.info-icon2{
       /* right: 20px; */
       top: 75px;
     }
-
     .welcome-screen
     {
         font-size: 1rem;
@@ -331,169 +404,7 @@ button:hover {
     {
       font-size: 0.7rem;
     }
-
-    .modal-overlay{
-
-      top: 50%;
-      /* background-color: rgba(0, 0, 0, 0.767); */
-      left: 10%;
-    }
-
-    .modal-btn.cancel{
-      /* margin-bottom: 20px;
-      font-size: 1rem;
-      left: 250px; */
-      left: 65%;
-    }
-
-    .modal-btn.confirm{
-      margin-bottom: 20px;
-      font-size: 1rem;
-      left: 5%;
-    }
-
   }
-
-  @media (max-width: 320px) {
-
-    .modal{
-      font-size: 0.8rem;
-    }
-    
-    /* .modal-btn.cancel{
-      margin-bottom: 50px;
-      font-size: 0.8rem;
-      padding: 0px 35px;
-      left: 200px;
-    }
-
-    .modal-btn.confirm{
-      margin-bottom: 50px;
-      font-size: 0.8rem;
-      left: 50px;
-      padding: 0px 35px;
-    } */
-  }
-  
-
-
-/* .title{
-    font-size: 2rem ;
- } 
-
- .reset-icon{
-  top: 70px;
-  left: 30px;
-  font-size: 1.1rem; 
- }
-
-.welcome-screen{
-  font-size: 1rem;
-  display: flex;
-  justify-content: center;  
-  align-items: center;      
-  height: 1025px;           
-  width: 768px;             
-  text-align: center;
-}
-
-.welcome-screen-p{
-    font-size: 0.5rem;
-  }
-
-.counter{
-    margin-bottom: 80px;
-}
-button {
-    width: 50px;
-    height: 50px;
-    bottom: 50px;
-}
-.modal-p{
-  padding: 5px 20px;
-  font-size: 0.7rem;
-}
-
-.modal-btn{
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 50px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    height: 30px
-}
-
-.modal-btn.confirm {
-  left: 40px;
-}
-
-.modal-btn.cancel {
-  right: 40px;
-}
-
-.minus {
-    left: 30px;
-    bottom: 100px;
-}
-
-.plus {
-    right: 30px;
-    bottom: 100px;
-}
-
-.footer{
-    font-size: 0.5rem;
-} */
-
-/* Tablets */
-/* @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  
-   .welcome-screen{
-    font-size: 1rem;
-    display: flex;
-    justify-content: center;  
-    align-items: center;      
-    height: 1025px;           
-    width: 769px;             
-    text-align: center;         
-  }
-
-  .welcome-screen-p{
-    font-size: 0.67rem;
-  }
-
-  .modal-p{
-      font-size: 0.9rem;
-  } 
-} */
-
-/*@media only screen and (min-width: 1025px){
-  
-  /* .welcome-screen{
-    font-size: 1rem;
-    display: flex;
-    justify-content: center;  
-    align-items: center;      
-    height: 1025px;           
-    width: 1025px;             
-    text-align: center;                  
-  } */
-
-
-/* @media (min-width: 1440px){
-  .welcome-screen{
-    height: 800px;  
-    width: 1140px;  
-    left: 0                  
-  }
-}
-
-@media (max-width: 2560px){
-  .welcome-screen{
-    height: 1025px;  
-    width: 2560px;                    
-  }
-} */
 
 
 
