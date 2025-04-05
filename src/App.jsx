@@ -47,7 +47,7 @@
       const newCount = count + 1;
       setCount(newCount);
 
-      if ((newCount - startingNumber) % 108 === 0 && newCount !== lastCycleCount) {
+      if ((newCount - startingNumber) % 1 === 0 && newCount !== lastCycleCount) {
         setCompletedCycles((prev) => prev + 1);
         setLastCycleCount(newCount);
         setShowCycleMessage(true);
@@ -98,7 +98,7 @@
           <div className="about-text">
             <h3>🛠 How to Use the Counter?</h3>
           <p>1. Enter a starting number (or leave it as 0).</p>
-          <p>2. Click the ➕ or ➖ buttons to increment/decrement the count.</p>
+          <p>2. Click the + or - buttons to increment/decrement the count.</p>
           <p>3. Every 108 counts, a cycle dot (🔵) appears.</p>
           <p>4. Click the reset button (🔄) to clear all progress.</p>
           <p>5. Click ℹ️ 'i' icon if you need help.</p>
@@ -112,7 +112,7 @@
         <div className="button-container">
           {count > 0 && <button className="minus" onClick={decreaseCounter}><FontAwesomeIcon icon={faMinus} /></button>}
           <FontAwesomeIcon icon={faRedo} className="reset-icon" onClick={resetCounter} />
-          <FontAwesomeIcon icon={faInfoCircle} className="info-icon2" onClick={() => {console.log("Info icon clicked!"); setShowInfo(true)}}   />
+          <FontAwesomeIcon icon={faInfoCircle} className="info-icon2" onClick={() => {setShowInfo(true)}}   />
           <button className="plus" onClick={increaseCounter}><FontAwesomeIcon icon={faPlus} /></button>
         </div>
           

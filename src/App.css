@@ -215,7 +215,7 @@ button {
   font-size: 1.4rem;
 }
 
-/* Hover effect */
+/* Hover effect */  
 button:hover {
   background-color: #ff7a46a8;
 }
@@ -381,6 +381,10 @@ button:hover {
       font-size: 0.8rem;
       width: 300px;
     }
+    .cycle-message {
+      font-size: 1.4rem;
+      top: 120px;
+    }
 
 }
 
@@ -403,6 +407,10 @@ button:hover {
     .welcome-screen-p
     {
       font-size: 0.7rem;
+    }
+    .cycle-message {
+      font-size: 1.3rem;
+      top: 110px;
     }
   }
 
