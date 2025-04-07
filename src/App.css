@@ -24,7 +24,7 @@ html, body {
   align-items: center;
   font-size: 0.6rem;
   padding: 10px;
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 0px;
   border-radius: 5px;
   border: 1px solid white;
@@ -84,6 +84,7 @@ html, body {
   color: white;
   text-align: center;
   margin: 0;
+  cursor: pointer;
   padding: 20px 0;
   position: fixed; /* Fixes it at the top */
   top: 10px; /* Keeps some spacing from the top */
@@ -92,13 +93,16 @@ html, body {
   width: 100%;
 }
 
+/* .title:hover{
+  color: #ff4800;
+} */
 /* Center the number */
 .counter {
   color: white;
   font-size: 6rem;
   text-align: center;
-  margin-top: 0px;
-  margin-bottom: 50px;
+  margin-top: 25px;
+  margin-bottom: 20px;
   /* text-shadow: 0 0px 30px #2df705; */
 }
 
@@ -171,7 +175,7 @@ button {
 }
 
 .modal {
-  background: rgba(107, 107, 107, 0.532);
+  background: rgba(45, 45, 45, 0.781);
   padding: 20px;
   color: #f7f6f6;
   border-radius: 22px;
@@ -182,6 +186,21 @@ button {
 
 .about-text{
   text-align: left;
+}
+
+hr{
+  border: none;
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    to left,
+    #ff4800 0 2px,   /* dash */
+    rgba(45, 45, 45, 0.781) 50px 20px  /* gap */
+  );  
+  /* border-top: 1px dashed #888; */
+  /* background-color: rgba(45, 45, 45, 0.76); */
+  margin: 0;
+  width: 90%;              
+  align-self: center;
 }
 
 .close-btn {
@@ -209,6 +228,7 @@ button {
 }
 
 /* Position "+" button on the right */
+
 .plus {
   right: 35px;
   bottom: 150px;
@@ -217,8 +237,39 @@ button {
 
 /* Hover effect */  
 button:hover {
-  background-color: #ff7a46a8;
+  background-color: #ff4800;
 }
+
+.timer-section {
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.timer-display {
+  font-size: 15px;
+  color: #fff;
+}
+
+.pause-btn {
+  text-align: center;
+  
+  background-color: rgba(58, 58, 58, 0.532);
+  color: white;
+  border: none;
+  /* left: 400px; */
+  padding: 10px 25px;
+  margin-bottom: 100px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.pause-btn:hover{
+  background-color: #ff4800;
+}
+
 
 /* Model style */
 /* .modal-overlay {
@@ -302,7 +353,7 @@ button:hover {
   justify-content: center;
   align-items: center;  /* Centers the dots vertically (if needed) */
   gap: 10px;
-  margin-top: 100px;
+  margin-top: 70px;
 }
 
 .dot {

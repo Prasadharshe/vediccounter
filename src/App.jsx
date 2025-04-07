@@ -1,6 +1,6 @@
   import { useState, useEffect } from "react";
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-  import { faPlus, faRedo, faMinus, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+  import { faPlus, faRedo, faMinus, faInfoCircle, faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
   import "./App.css";
 
   function App() {
@@ -14,6 +14,13 @@
     const [showWelcome, setShowWelcome] = useState(true);
 
     const [showInfo, setShowInfo] = useState(false);
+
+    const [timer, setTimer] = useState(0);
+    const [isTimerRunning, setIsTimerRunning] = useState(false);
+
+    const pauseTimer = () => {
+      setIsTimerRunning(false);
+    };    
 
     // const [showModal, setShowModal] = useState(false);
     const [completedCycles, setCompletedCycles] = useState(() => {
@@ -35,6 +42,17 @@
       return () => clearTimeout(timer);
     }, []);
 
+    useEffect(() => {
+      let interval;
+      if (isTimerRunning) {
+        interval = setInterval(() => {
+          setTimer((prev) => prev + 1);
+        }, 1000);
+      }
+      return () => clearInterval(interval);
+    }, [isTimerRunning]);
+    
+
     const handleStartingNumberChange = (e) => {
       const newStart = parseInt(e.target.value, 10) || 0;
       setStartingNumber(newStart);
@@ -43,11 +61,22 @@
       setLastCycleCount(0);
     };
 
+    const formatTime = (seconds) => {
+      const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
+      const secs = String(seconds % 60).padStart(2, '0');
+      return `${minutes}:${secs}`;
+    };
+    
+
     const increaseCounter = () => {
       const newCount = count + 1;
       setCount(newCount);
 
-      if ((newCount - startingNumber) % 1 === 0 && newCount !== lastCycleCount) {
+      if (!isTimerRunning) {
+        setIsTimerRunning(true);
+      }
+
+      if ((newCount - startingNumber) % 2 === 0 && newCount !== lastCycleCount) {
         setCompletedCycles((prev) => prev + 1);
         setLastCycleCount(newCount);
         setShowCycleMessage(true);
@@ -58,12 +87,14 @@
     const decreaseCounter = () => count > 0 && setCount(count - 1);
 
     const resetCounter = () => {
-      const confirmReset = window.confirm("Are you sure you want to reset the counter?");
+      const confirmReset = window.confirm("Are you sure you want to reset the timer and counter?");
       if (confirmReset) {
         setCount(startingNumber); // Reset counter to the starting number
         setCompletedCycles(0); // Reset cycle count
         setLastCycleCount(0); // Reset last cycle count
         setShowCycleMessage(false); // Hide cycle message
+        setTimer(0);         // ✅ Reset timer
+        setIsTimerRunning(false);
     
         // Remove from localStorage
         localStorage.removeItem("counterValue");
@@ -97,6 +128,7 @@
           {/* <p>Welcome to Vedic Counter! This tool helps you keep track of your chant cycles efficiently. Below is a complete guide on how to use it.</p> */}
           <div className="about-text">
             <h3>🛠 How to Use the Counter?</h3>
+            <hr />
           <p>1. Enter a starting number (or leave it as 0).</p>
           <p>2. Click the + or - buttons to increment/decrement the count.</p>
           <p>3. Every 108 counts, a cycle dot (🔵) appears.</p>
@@ -115,6 +147,15 @@
           <FontAwesomeIcon icon={faInfoCircle} className="info-icon2" onClick={() => {setShowInfo(true)}}   />
           <button className="plus" onClick={increaseCounter}><FontAwesomeIcon icon={faPlus} /></button>
         </div>
+
+        <div className="timer-section">
+          <p className="timer-display">Timer: {formatTime(timer)} sec</p>
+          <button className="pause-btn" onClick={() => setIsTimerRunning(prev => !prev)}
+          title={isTimerRunning ? "Pause" : "Resume"}>{isTimerRunning ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} /> }</button>
+        </div>
+
+
+        
           
           
         {/* {showModal && (
