@@ -18,9 +18,12 @@
     const [timer, setTimer] = useState(0);
     const [isTimerRunning, setIsTimerRunning] = useState(false);
 
-    const pauseTimer = () => {
-      setIsTimerRunning(false);
-    };    
+    // const pauseTimer = () => {
+    //   setIsTimerRunning(false);
+    // };    
+
+    // bellSound after 108 cycle completes
+    const bellSound = new Audio("public/ding.mp3");
 
     // const [showModal, setShowModal] = useState(false);
     const [completedCycles, setCompletedCycles] = useState(() => {
@@ -76,11 +79,15 @@
         setIsTimerRunning(true);
       }
 
-      if ((newCount - startingNumber) % 108 === 0 && newCount !== lastCycleCount) {
+      if ((newCount - startingNumber) %  108 === 0 && newCount !== lastCycleCount) {
         setCompletedCycles((prev) => prev + 1);
         setLastCycleCount(newCount);
         setShowCycleMessage(true);
         setTimeout(() => setShowCycleMessage(false), 5000);
+        bellSound.play();
+        if (navigator.vibrate) {
+          navigator.vibrate(200); // Vibrates for 200 milliseconds
+        }
       }
     };
 
