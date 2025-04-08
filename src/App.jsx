@@ -23,7 +23,7 @@
     // };    
 
     // bellSound after 108 cycle completes
-    const bellSound = new Audio("/ding.mp3");
+    const bellSound = new Audio('/vediccounter/ding.mp3');
 
     // const [showModal, setShowModal] = useState(false);
     const [completedCycles, setCompletedCycles] = useState(() => {
