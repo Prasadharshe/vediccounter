@@ -92,7 +92,7 @@
           setIsTimerRunning(true);
         }
 
-        if ((newCount - startingNumber) %  5 === 0 && newCount !== lastCycleCount) {
+        if ((newCount - startingNumber) %  108 === 0 && newCount !== lastCycleCount) {
           setCompletedCycles((prev) => prev + 1);
           setLastCycleCount(newCount);
           setShowCycleMessage(true);
