@@ -180,7 +180,7 @@ button {
   color: #f7f6f6;
   border-radius: 22px;
   text-align: center;
-  width: 500px;
+  width: 650px;
   position: relative ;
 }
 
@@ -248,8 +248,7 @@ button:hover {
 }
 
 .timer-display {
-  font-size: 15px;
-  color: #fff;
+  font-size: 22px;
 }
 
 .pause-btn {
@@ -430,7 +429,7 @@ button:hover {
     }
     .modal {
       font-size: 0.8rem;
-      width: 300px;
+      width: 330px;
     }
     .cycle-message {
       font-size: 1.4rem;

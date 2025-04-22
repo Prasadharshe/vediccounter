@@ -150,11 +150,17 @@
             <div className="about-text">
               <h3>🛠 How to Use the Counter?</h3>
               <hr />
-            <p>1. Enter a starting number (or leave it as 0).</p>
-            <p>2. Click the + or - buttons to increment/decrement the count.</p>
-            <p>3. Every 108 counts, a cycle dot (🔵) appears.</p>
-            <p>4. Click the reset button (🔄) to clear all progress.</p>
-            <p>5. Click ℹ️ 'i' icon if you need help.</p>
+              <p>1. Enter a starting number (or leave it as 0).</p>
+              <p>2. Click the + or - buttons to increment/decrement the count.</p>
+              <p>3. Every 108 counts, a cycle dot (🔵) appears.</p>
+              <p>4. Click the reset button (🔄) to clear all progress.</p>
+              <p>5. The timer starts automatically when you begin counting.</p>
+              <p>6. Click the ⏸ Pause button to pause the timer, and ▶ Resume to start it again.</p>
+              <p>7. The timer text is red when running and white when paused.</p>
+              <p>8. 🔔 A soft bell sound plays on every completed cycle for peaceful feedback.</p>
+              <p>9. 📳 Your device will gently vibrate when a cycle (108 counts) is completed (if supported).</p>
+              <p>10. Your progress, timer, and completed cycles are saved even after refreshing the page.</p>
+              <p>11. Click the ℹ️ 'i' icon anytime for help.</p>
             </div>
           </div>
         </div>
@@ -169,8 +175,8 @@
             <button className="plus" onClick={increaseCounter}><FontAwesomeIcon icon={faPlus} /></button>
           </div>
 
-          <div className="timer-section">
-            <p className="timer-display">Timer: {formatTime(timer)} sec</p>
+          <div className="timer-section samarkan-text">
+          <p className="timer-display" style={{ color: isTimerRunning ? "#ff4800" : "white" }}>Timer: {formatTime(timer)} sec</p>
             <button className="pause-btn" onClick={() => setIsTimerRunning(prev => !prev)}
             title={isTimerRunning ? "Pause" : "Resume"}>{isTimerRunning ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} /> }</button>
           </div>
