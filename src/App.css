@@ -8,6 +8,7 @@ html, body {
   /* font-family: "Press Start 2P", system-ui; */
   background-color: black; /* Full black background */
   overflow: hidden; /* Prevents scrolling */
+  background: radial-gradient(ellipse at bottom, #1b2735 10%, #090a0f 100%);
 }
 
 /* style for input field */
@@ -30,7 +31,8 @@ html, body {
   border: 1px solid white;
   text-align: center;
   width: 150px;
-  background-color: black; /* Ensure background is dark */
+  background: transparent;
+  /* background-color: black;  */
   color: white; /* Ensure text is white */
   outline: none;
 }
@@ -50,7 +52,7 @@ html, body {
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     text-align: center; /* Center text */
-    background-color: black; /* Keep background */
+    /* background-color: black; */
     color: white; /* Text color */
     font-size: 1.5rem; /* Adjust font size */
     padding: 20px;
@@ -73,10 +75,18 @@ html, body {
   justify-content: center;
   height: 100vh; /* Ensures full-screen height */
   width: 100vw; /* Ensures full-screen width */
-  background-color: black;
+  /* background-color: black; */
+  background: transparent url('stardust.png') repeat;
   color: white;
   position: relative;
   padding-top: 50px; /* Space for title */
+  animation: moveStardust 500s linear infinite;
+
+}
+
+@keyframes moveStardust {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
 }
 
 .title {
