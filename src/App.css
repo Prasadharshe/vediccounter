@@ -76,7 +76,7 @@ html, body {
   height: 100vh; /* Ensures full-screen height */
   width: 100vw; /* Ensures full-screen width */
   /* background-color: black; */
-  background: transparent url('stardust.png') repeat;
+  background: transparent url('public/stardust.png') repeat;
   color: white;
   position: relative;
   padding-top: 50px; /* Space for title */
