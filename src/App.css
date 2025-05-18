@@ -235,6 +235,7 @@ hr{
   left: 35px;
   bottom: 150px;
   font-size: 1.4rem;
+  background-color: rgba(58, 58, 58, 0.532);
 }
 
 /* Position "+" button on the right */
@@ -243,6 +244,7 @@ hr{
   right: 35px;
   bottom: 150px;
   font-size: 1.4rem;
+  background-color: rgba(58, 58, 58, 0.532);
 }
 
 /* Hover effect */  
@@ -263,7 +265,6 @@ button:hover {
 
 .pause-btn {
   text-align: center;
-  
   background-color: rgba(58, 58, 58, 0.532);
   color: white;
   border: none;
